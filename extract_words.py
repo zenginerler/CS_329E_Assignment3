@@ -4,9 +4,9 @@ import re
 import collections
 
 original = open("./text_data/metamorphosis.txt", "r")
-allwords = open("./text_data/allwords.txt", "a")
-uniqwords = open("./a3_novelvisualization/data/uniquewords.txt", "a")
-wordfreq = open("./a3_wordfrequency/data/wordfrequency.txt", "a")
+allwords = open("./text_data/allwords.txt", "w")
+uniqwords = open("./a3_novelvisualization/data/uniquewords.txt", "w")
+wordfreq = open("./a3_wordfrequency/data/wordfrequency.txt", "w")
 
 for x in original:
     x = x.lower()
