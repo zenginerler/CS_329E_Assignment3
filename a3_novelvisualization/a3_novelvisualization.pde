@@ -4,130 +4,88 @@ String[] words;
 PFont font;
 int fontSize = 32;
 
-int horizontal = 0;
-int vertical = 0;
+//preset colors
+color [] paint = {
+  color(255, 255, 255), color(0, 0, 0)}; //white & black
+color [][] colorList = {
+  {color (120, 1, 22), color (247, 181, 56), color (83, 221, 108)}, 
+  {color (26, 200, 237), color (204, 85, 0), color (54, 33, 62)}, 
+  {color (35, 61, 77), color (222, 60, 75), color (252, 202, 70)}};
+// 0 short | 1 medium | 2 long
 
-
-//String[] fontlist = PFont.list();
-//printArray(fontlist);
-//random();
 
 void setup() {
   //general settings
   size(700, 600);
   background(255);
-  fill(0);
-  
+  colorMode(RGB, 255, 255, 255);
+
   //load the input
-  words = loadStrings("../uniquewords.txt");
-  
+  words = loadStrings("./data/uniquewords.txt");
+
   //font settings
-  font = createFont("Serif.plain", fontSize);
+  font = createFont("Pacifico-Regular.ttf", fontSize);
   textFont(font);
-  
-  //will not loop without interaction
+}
+
+
+void draw() {
+  cloud();
+  //don't loop continuously
   noLoop();
 }
 
-void draw() {
 
-
-
-}
-
-void mousePressed(){
-  cloud(); //
-}
-
-void cloud(){
+void cloud() {
   //clean the canvas
-  background(255);
-  
-  //reset boundaries
-  horizontal = 0;
-  vertical = 0;
-  
-  int len = 0;
-  // funtion body
-  while (horizontal < width && vertical < height){
-    
-      // process the input
-      for (int i = 0; i < words.length; i++) {
-        println(words[i].length());
-      }
+  int luck = (int) random(0, 2);
+  background(paint[luck]);
+
+
+  //setting variables
+  fontSize = (int) textAscent()+5;  // prevents collisions caused by the font
+  int wordCount = words.length; // n-1
+  int horizontal = 10;
+  int vertical = fontSize;
+
+  //create a list consisting from random words
+  ArrayList<String> randomWords = new ArrayList<String>(wordCount);
+  for (int i=0; i<wordCount; i++) {
+    int index = (int) random(0, words.length-1); 
+    randomWords.add(words[index]);
   }
 
-}
+  // main funtion body
+  int counter = 0;
+  luck = (int) random(0, 3); //color palette
+  while ((vertical < height-10) && (counter < wordCount-1)) {
+    String word = randomWords.get(counter);
+    String nextWord = randomWords.get(counter+1);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-void setup() {
-  //canvas settings
-  size(700, 600);
-  background(255);
-
-  //text input/output handler
-  int wordCount = 0;
-  String[] lines = loadStrings("mytext.txt");
-  output = createWriter("outputPositions.txt");
-
-  // process the input
-  for (int i = 0; i < lines.length; i++) {
-    println(lines[i].length());
-
-    String [] subwords = split(lines[i], " ");
-
-    wordCount += subwords.length;
-    println("wordCount:", wordCount); //print word count per line
-
-    for (int j = 0; j < subwords.length; j++) {
-      output.println(subwords[j]);
+    //color selection
+    if (word.length() < 5) {
+      fill(colorList[luck][0]);
+    } else if (word.length() < 8) {
+      fill(colorList[luck][1]);
+    } else {
+      fill(colorList[luck][2]);
     }
+
+    text(word, horizontal, vertical);
+    horizontal += textWidth(word)+10;
+
+    // location check
+    if (horizontal + textWidth(nextWord)+5 > width) {
+      horizontal = 10;
+      vertical += fontSize;
+    }
+
+    counter++;
   }
 }
 
-void draw() {
-  stroke(0);
-  fill(0);
-  textSize(10);
-  text("Press a button to save changes", width/2-75, height/2);
-}
 
-
-void keyPressed() {
-  output.flush();
-  output.close();
+void mousePressed() {
+  //recreate the word cloud for every mouse click
+  loop();
 }
-*/

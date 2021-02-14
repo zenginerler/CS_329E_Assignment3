@@ -1,24 +1,18 @@
 ## Assingment 3 - Novel Visualization
 
-Authors: Mehmet Yavuz Zenginerler, Claudia Wang, Landry ... <br>
-UT EIDs: myz225, ...,  ...
+Authors: Mehmet Yavuz Zenginerler, Claudia Wang, Landry Luker <br>
+UT EIDs: myz225, xxx, xxx
 
 
 ### Instructions
 
-This file should be executable upon clicking "Run" in Processing. <br>
-To apply filters to the displayed image, please use the commands below.
+To run processing scripts, you must first run extract_words.py. 
+Then, they should be executable upon clicking "Run" in Processing.
 
-
-#### Key Commands
-```
-None
-```
 
 
 ### Dependencies
 
 * Processing 3+
-
-
-
+* metamorphosis.txt
+* extract_words.py

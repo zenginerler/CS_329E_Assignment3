@@ -3,10 +3,10 @@
 import re
 import collections
 
-original = open("metamorphosis.txt", "r")
-allwords = open("allwords.txt", "a")
-uniqwords = open("uniquewords.txt", "a")
-wordfreq = open("wordfrequency.txt", "a")
+original = open("./text_data/metamorphosis.txt", "r")
+allwords = open("./text_data/allwords.txt", "a")
+uniqwords = open("./a3_novelvisualization/data/uniquewords.txt", "a")
+wordfreq = open("./a3_wordfrequency/data/wordfrequency.txt", "a")
 
 for x in original:
     x = x.lower()
@@ -15,7 +15,7 @@ for x in original:
     
 allwords.close()
 
-allwords = open("allwords.txt", "r")
+allwords = open("./text_data/allwords.txt", "r")
 
 uniq = {}
 

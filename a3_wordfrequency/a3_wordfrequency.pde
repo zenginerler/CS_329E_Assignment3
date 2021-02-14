@@ -9,7 +9,7 @@ void draw() {
   strokeWeight(3);
   line(10, 510, 500, 510);
   line(260, 510, 260, 10);
-  String[] lines = loadStrings("wordfrequency.txt");
+  String[] lines = loadStrings("./data/wordfrequency.txt");
   String[][] frequencies = new String[lines.length][2];
 
   float maxLength = 0;
