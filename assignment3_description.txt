@@ -1,1 +1,16 @@
 Hello happy potatoes!
+
+The basic functionality of the a3_wordfrequency.pde file was created by Landry. This program
+utilizes a file titled "wordfrequency.txt" to graph the number of words that appear at any given
+frequency, with the y axis of the graph representing frequency and the x axis representing
+the number of words that appear at that frequency. For example, if there are 375 words that appear
+twice within the text and 500 words that appear only once, then the bottommost square on the
+graph will represent words that appear only once, and the horizontal length of the box will
+represent the fact that 500 words appear at this frequency. Then, directly above this will be
+another box representing the 375 words that appear twice. To help meet the extra credit requirements
+for this project, the size of the boxes have been automatically scaled to ensure that the graph 
+always fills as much of the canvas as possible (minus padding around the borders of the canvas for 
+aesthetics) without data going off the screen. Additionally, coloring to the boxes was added to
+improve the appearance of the graph. After these functionalities were added, Mehmet refactored the
+code for readibility, added flexibility to the code, and dramatically improved the appearance of the
+graph by utilizing a more complex coloring scheme for the boxes.
