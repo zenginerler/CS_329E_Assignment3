@@ -11,7 +11,7 @@ color [][] colorList = {
   {color (120, 1, 22), color (247, 181, 56), color (83, 221, 108)}, 
   {color (26, 200, 237), color (204, 85, 0), color (54, 33, 62)}, 
   {color (35, 61, 77), color (222, 60, 75), color (252, 202, 70)}};
-// 0 short | 1 medium | 2 long
+  // 0 short | 1 medium | 2 long
 
 
 void setup() {

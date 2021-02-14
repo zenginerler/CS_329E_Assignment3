@@ -1,16 +1,42 @@
 // a3_wordfrequency
-void setup() {
-  size(520, 520);
-}
+String[] lines;
+String[][] frequencies;
 
-void draw() {
+int t = 240; //transparency
+color c0 = color(0,0,0, t); //black
+color c1 = color(255,255,255, t); //white
+color c2 = color(255,0,0, t); //red
+color c3 = color(0,255,0, t); //green
+color c4 = color(0,0,255, t); //blue
+color c5 = color(255,255,0, t); //yellow
+color c6 = color(0,200,200, t); //ligth blue
+color c7 = color(255,0,255, t); // pink
+color c8 = color(217, 198, 158, t); //sandstone 
+
+color[] myColors = {c0,c1,c2,c3,c4,c5,c6,c7,c8}; //color list
+
+int paddle = 10;
+
+
+void setup() {
+  //general settings
+  size(700, 600);
+  colorMode(RGB);
+  rectMode(CENTER);
   background(255);
   stroke(0);
+  
+  //input handler
+  lines = loadStrings("./data/test.txt"); // FIXME: replace "test" with "wordfrequency"
+  frequencies = new String[lines.length][2];
+}
+
+
+void draw() {
+  //axis lines
   strokeWeight(3);
-  line(10, 510, 500, 510);
-  line(260, 510, 260, 10);
-  String[] lines = loadStrings("./data/wordfrequency.txt");
-  String[][] frequencies = new String[lines.length][2];
+  line(paddle, height-paddle, width-paddle, height-paddle);
+  line(width/2, paddle, width/2, height-paddle);
 
   float maxLength = 0;
   for (int idx = 0; idx < lines.length; idx++) {
@@ -19,15 +45,21 @@ void draw() {
       maxLength = float(frequencies[idx][1]);
     }
   }
-  float horizFactor = 500.0 / maxLength;
-  float boxHeight = 500.0 / float(frequencies[frequencies.length - 1][0]);
+  float horizFactor = (width-40) / maxLength;
+  float boxHeight = (height-40) / float(frequencies[frequencies.length - 1][0]);
 
-  rectMode(CENTER);
-  colorMode(RGB);
-  fill(255, 0, 0, 50);
+  //create colorful rectangles
+  int luck;
+  strokeWeight(2);
   for (int box = 1; box < frequencies.length + 1; box++) {
-    rect(260, 510 - (int(frequencies[box - 1][0]) * boxHeight) + (boxHeight / 2), horizFactor * int(frequencies[box - 1][1]), boxHeight);
+    luck = (box -1) % myColors.length;
+    
+    stroke(0);
+    fill(myColors[luck]);
+    rect(width/2, height-12 - (int(frequencies[box - 1][0]) * boxHeight) + (boxHeight / 2), horizFactor * int(frequencies[box - 1][1]), boxHeight);
   }
+  
+  // FIXME: The math equation for calculating the size of rectangles is not good enough yet
 
   noLoop();
 }
