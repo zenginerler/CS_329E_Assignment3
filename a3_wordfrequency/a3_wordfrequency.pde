@@ -20,21 +20,21 @@ int paddle = 10;
 
 void setup() {
   //general settings
-  size(700, 600);
+  size(1000, 900);
   colorMode(RGB);
   rectMode(CENTER);
   background(255);
   stroke(0);
   
   //input handler
-  lines = loadStrings("./data/test.txt"); // FIXME: replace "test" with "wordfrequency"
+  lines = loadStrings("./data/wordfrequency.txt"); // FIXME: replace "test" with "wordfrequency"
   frequencies = new String[lines.length][2];
 }
 
 
 void draw() {
   //axis lines
-  strokeWeight(3);
+  strokeWeight(2);
   line(paddle, height-paddle, width-paddle, height-paddle);
   line(width/2, paddle, width/2, height-paddle);
 
@@ -46,7 +46,7 @@ void draw() {
     }
   }
   float horizFactor = (width-40) / maxLength;
-  float boxHeight = (height- (paddle * 2)) / float(frequencies[frequencies.length - 1][0]);
+  float boxHeight = (height- (paddle * 2)) / float(frequencies.length);
 
   //create colorful rectangles
   int luck;
@@ -56,7 +56,7 @@ void draw() {
     
     stroke(0);
     fill(myColors[luck]);
-    rect(width/2, height - paddle - (int(frequencies[box - 1][0]) * boxHeight) + (boxHeight / 2), horizFactor * int(frequencies[box - 1][1]), boxHeight);
+    rect(width/2, height - paddle - (box * boxHeight) + (boxHeight / 2), max(horizFactor * int(frequencies[box - 1][1]), 6), boxHeight);
   }
 
   noLoop();

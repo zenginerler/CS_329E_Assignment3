@@ -1,9 +1,8 @@
 # extract_words.py
-
 import re
 import collections
 
-original = open("./text_data/metamorphosis.txt", "r")
+original = open("./text_data/yellowWallPaper.txt", "r")
 allwords = open("./text_data/allwords.txt", "w")
 uniqwords = open("./a3_novelvisualization/data/uniquewords.txt", "w")
 wordfreq = open("./a3_wordfrequency/data/wordfrequency.txt", "w")

@@ -10,7 +10,7 @@ To run processing scripts, you must first run extract_words.py. <br>
 Then, they should be executable upon clicking "Run" in Processing.
 
 * Novel Visualization Features
-    * Use your mouse to change color palette and background color
+    * Use your mouse to change the color palette and background-color
 
 
 
