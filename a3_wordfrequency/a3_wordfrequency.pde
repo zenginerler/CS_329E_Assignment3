@@ -20,14 +20,14 @@ int paddle = 10;
 
 void setup() {
   //general settings
-  size(700, 600);
+  size(1200, 1200);
   colorMode(RGB);
   rectMode(CENTER);
   background(255);
   stroke(0);
   
   //input handler
-  lines = loadStrings("./data/test.txt"); // FIXME: replace "test" with "wordfrequency"
+  lines = loadStrings("./data/wordfrequency.txt"); // FIXME: replace "test" with "wordfrequency"
   frequencies = new String[lines.length][2];
 }
 
@@ -56,7 +56,7 @@ void draw() {
     
     stroke(0);
     fill(myColors[luck]);
-    rect(width/2, height - paddle - (int(frequencies[box - 1][0]) * boxHeight) + (boxHeight / 2), horizFactor * int(frequencies[box - 1][1]), boxHeight);
+    rect(width/2, height - paddle - (int(frequencies[box - 1][0]) * boxHeight) + (boxHeight / 2), max(horizFactor * int(frequencies[box - 1][1]), 6), boxHeight);
   }
 
   noLoop();
