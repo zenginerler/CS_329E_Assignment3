@@ -46,7 +46,7 @@ void draw() {
     }
   }
   float horizFactor = (width-40) / maxLength;
-  float boxHeight = (height-40) / float(frequencies[frequencies.length - 1][0]);
+  float boxHeight = (height- (paddle * 2)) / float(frequencies[frequencies.length - 1][0]);
 
   //create colorful rectangles
   int luck;
@@ -56,10 +56,8 @@ void draw() {
     
     stroke(0);
     fill(myColors[luck]);
-    rect(width/2, height-12 - (int(frequencies[box - 1][0]) * boxHeight) + (boxHeight / 2), horizFactor * int(frequencies[box - 1][1]), boxHeight);
+    rect(width/2, height - paddle - (int(frequencies[box - 1][0]) * boxHeight) + (boxHeight / 2), horizFactor * int(frequencies[box - 1][1]), boxHeight);
   }
-  
-  // FIXME: The math equation for calculating the size of rectangles is not good enough yet
 
   noLoop();
 }
