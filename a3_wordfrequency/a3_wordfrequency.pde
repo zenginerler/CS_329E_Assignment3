@@ -56,6 +56,7 @@ void draw() {
     
     stroke(0);
     fill(myColors[luck]);
+
     rect(width/2, height - paddle - (box * boxHeight) + (boxHeight / 2), max(horizFactor * int(frequencies[box - 1][1]), 6), boxHeight);
   }
 
