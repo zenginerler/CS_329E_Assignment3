@@ -1,7 +1,7 @@
 ## Assingment 3 - Novel Visualization
 
 Authors: Mehmet Yavuz Zenginerler, Claudia Wang, Landry Luker <br>
-UT EIDs: myz225, xxx, xxx
+UT EIDs: myz225, xxx, ljl987
 
 
 ### Instructions
@@ -17,5 +17,5 @@ Then, they should be executable upon clicking "Run" in Processing.
 ### Dependencies
 
 * Processing 3+
-* metamorphosis.txt
+* yellowWallPaper.txt
 * extract_words.py

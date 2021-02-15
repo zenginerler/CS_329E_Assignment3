@@ -20,7 +20,7 @@ int paddle = 10;
 
 void setup() {
   //general settings
-  size(1000, 900);
+  size(1200, 800);
   colorMode(RGB);
   rectMode(CENTER);
   background(255);
@@ -34,7 +34,7 @@ void setup() {
 
 void draw() {
   //axis lines
-  strokeWeight(2);
+  strokeWeight(3);
   line(paddle, height-paddle, width-paddle, height-paddle);
   line(width/2, paddle, width/2, height-paddle);
 
@@ -56,8 +56,7 @@ void draw() {
     
     stroke(0);
     fill(myColors[luck]);
-
-    rect(width/2, height - paddle - (box * boxHeight) + (boxHeight / 2), max(horizFactor * int(frequencies[box - 1][1]), 6), boxHeight);
+    rect(width/2, height - paddle - (int(frequencies[box - 1][0]) * boxHeight) + (boxHeight / 2), max(horizFactor * int(frequencies[box - 1][1]), 6), boxHeight);
   }
 
   noLoop();
