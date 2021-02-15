@@ -20,7 +20,7 @@ int paddle = 10;
 
 void setup() {
   //general settings
-  size(1200, 1200);
+  size(1200, 800);
   colorMode(RGB);
   rectMode(CENTER);
   background(255);
