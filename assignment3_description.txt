@@ -1,6 +1,7 @@
-Hello happy potatoes!
+Claudia Wang - extract_words.py
 
-The basic functionality of the a3_wordfrequency.pde file was created by Landry. This program
+
+The basic functionality of the a3_wordfrequency.pde file was created by Landry Luker. This program
 utilizes a file titled "wordfrequency.txt" to graph the number of words that appear at any given
 frequency, with the y axis of the graph representing frequency and the x axis representing
 the number of words that appear at that frequency. For example, if there are 375 words that appear
@@ -14,3 +15,11 @@ aesthetics) without data going off the screen. Additionally, coloring to the box
 improve the appearance of the graph. After these functionalities were added, Mehmet refactored the
 code for readibility, added flexibility to the code, and dramatically improved the appearance of the
 graph by utilizing a more complex coloring scheme for the boxes.
+
+
+A3_novelvisualization.pde file was developed by Mehmet Zenginerler. 
+This file, whose purpose is to create unique word clouds, 
+selects random words from the uniquewords.txt file after each click. 
+Then it chooses a random background color and a random color palette 
+(The chosen color palette is applied to words according to their length.) 
+and draws a new word cloud on the canvas. This process repeats itself for every mouse click.

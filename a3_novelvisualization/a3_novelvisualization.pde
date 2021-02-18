@@ -8,11 +8,10 @@ int fontSize = 32;
 color [] paint = {
   color(255, 255, 255), color(0, 0, 0)}; //white & black
 color [][] colorList = {
-  {color (120, 1, 22), color (247, 181, 56), color (83, 221, 108)}, 
+  {color (120,1,22), color (192, 50, 33), color (51, 161, 253)}, 
   {color (26, 200, 237), color (204, 85, 0), color (54, 33, 62)}, 
   {color (35, 61, 77), color (222, 60, 75), color (252, 202, 70)}};
   // 0 short | 1 medium | 2 long
-
 
 void setup() {
   //general settings

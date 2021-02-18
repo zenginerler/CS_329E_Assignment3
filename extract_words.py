@@ -1,5 +1,4 @@
 # extract_words.py
-
 import re
 import collections
 
