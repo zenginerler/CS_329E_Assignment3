@@ -1,4 +1,13 @@
-Claudia Wang - extract_words.py
+The extract_words.py file was created by Claudia Wang and begins by importing re and collections. 
+These are necessary for regex operations and to sort dictionaries. Next, the metamorphosis.txt, 
+allwords.txt, uniquewords.txt, and wordfrequency.txt files are set up. After this basic setup, all of
+the punctation is then removed from metamorphosis.txt, the text from this file is all converted to
+lower case, and then this modified text is written to allwords.txt. After the text has been cleaned,
+all of the unique words are found using a dictionary and a for loop. After this, the unique words are
+added to uniquewords.txt and the word frequencies are tabulated in another dictionary where the
+frequencies are the keys and the number of times that each frequency appears are the values. Finally,
+this dictionary is sorted using the collections import and the values are written to 
+wordfrequency.txt with the correct formatting.
 
 
 The basic functionality of the a3_wordfrequency.pde file was created by Landry Luker. This program
@@ -23,3 +32,12 @@ selects random words from the uniquewords.txt file after each click.
 Then it chooses a random background color and a random color palette 
 (The chosen color palette is applied to words according to their length.) 
 and draws a new word cloud on the canvas. This process repeats itself for every mouse click.
+Both the font (Pacifico-Regular) and the font size (32) were chosen simply because this
+combination made the word cloud appear aesthetically pleasing. The background color changing
+when the mouse is clicked was also added because of aesthetics, and we hope that this may count
+towards our extra credit since this was not a requirement of the project.
+
+One final note is worth considering- Both the allwords.txt and the yellowWallPaper.txt files
+(the latter of which contains our book of interest) were included in a directory named text_data.
+This was not outlined in the project instructions but was done to add organization to our
+project file.
