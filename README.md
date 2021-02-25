@@ -1,7 +1,6 @@
-## Assingment 3 - Novel Visualization
+## Assignment 3 - Novel Visualization
 
 Authors: Mehmet Yavuz Zenginerler, Claudia Wang, Landry Luker <br>
-UT EIDs: myz225, cyw278, ljl987
 
 
 ### Instructions
